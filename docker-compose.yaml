@@ -1,0 +1,91 @@
+services:
+  # Database
+  db:
+    image: mariadb:latest
+    restart: always
+    ports:
+      - '6603:3306'
+    volumes:
+      - ./wordpress.sql:/docker-entrypoint-initdb.d/wordpress.sql
+      - ./licenses.sql:/docker-entrypoint-initdb.d/licenses.sql
+    environment:
+      MARIADB_ROOT_PASSWORD: hjWrTSKa12PUoY
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: babel
+      MARIADB_PASSWORD: hjWrTSKa12PUoY
+    networks:
+      - babel-lic-wp-net
+  
+  # Wordpress 
+  # user: admin
+  # password: admin
+  wordpress:
+    depends_on:
+      - db
+    container_name: babel-lic-wp
+    restart: always
+    build:
+      dockerfile: WordPress.dockerfile
+      context: .
+    image: babel-licensing-wordpress:latest
+    ports:
+      - '8000:80'
+    volumes:
+      - type: bind
+        source: ./docker-uploads.ini
+        target: /usr/local/etc/php/conf.d/docker-uploads.ini
+      - type: bind
+        source: ./wp-config.php
+        target: /var/www/html/wp-config.php
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: hjWrTSKa12PUoY
+      WORDPRESS_DB_NAME: wordpress
+    networks:
+      - babel-lic-wp-net
+
+  # Babel Licensing
+  licensing:
+    depends_on:
+      - db
+    container_name: babel-lic-svc
+    restart: always
+    build:
+      dockerfile: AspNet.dockerfile
+      context: .
+    image: babel-licensing-service:latest
+    ports:
+      - '5005:5005'
+      - '5455:5455'
+    volumes: 
+      - type: bind
+        source: ./babel
+        target: /var/www/babel-lic
+      - type: bind
+        source: ./appsettings.json
+        target: /var/www/babel-lic/appsettings.json
+      - type: bind
+        source: ./babel.licenses
+        target: /var/www/babel-lic/babel.licenses       
+      - type: bind
+        source: ./HttpKeys.pfx
+        target: /var/www/babel-lic/HttpKeys.pfx
+    environment:
+      # Environment
+      ASPNETCORE_ENVIRONMENT: Production
+
+      # Available database providers: SQLServer, MySQL, SQLite
+      BABEL_SERVICE_DATABASE__PROVIDER: MySQL
+
+      # Connection strings environment variables
+      # SQL Server: BABEL_SERVICE_CONNECTIONSTRINGS__SQLSERVER
+      # MySQL: BABEL_SERVICE_CONNECTIONSTRINGS__MYSQL
+      # SQLite: BABEL_SERVICE_CONNECTIONSTRINGS__SQLITE
+      BABEL_SERVICE_CONNECTIONSTRINGS__MYSQL: Server=db;User=root;Password=hjWrTSKa12PUoY;Database=licenses
+      
+    networks:
+      - babel-lic-wp-net
+  
+networks:
+  babel-lic-wp-net:
