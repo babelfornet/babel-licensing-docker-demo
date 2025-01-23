@@ -8,7 +8,7 @@ See project [Wiki](https://github.com/babelfornet/babel-licensing-docker-demo/wi
 
 ### Startup
 
-1. Copy your license file babel.licenses inside this folder.
+1. Copy application files and the license file _babel.licenses_ inside this folder.
 
 2. Start Docker Compose
 
