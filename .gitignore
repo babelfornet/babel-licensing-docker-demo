@@ -1,0 +1,9 @@
+# Ignore babel folder
+babel/
+
+# Ignore application files
+babel_service_net*.zip
+babel-licensing.zip
+
+# Ignore license file
+babel.licenses
