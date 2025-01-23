@@ -1,4 +1,16 @@
-# Startup
+# Babel Licensing Docker Demo
+
+The Babel Licensing Docker Demo is a set of files designed to showcase the capabilities of Babel Licensing Service when integrated with a WordPress site.
+
+> NOTE: To run this demo please request application files at sales@babelfor.net
+
+See project [Wiki](https://github.com/babelfornet/babel-licensing-docker-demo/wiki) page for detailed instructions.
+
+### Startup
+
+1. Copy your license file babel.licenses inside this folder.
+
+2. Start Docker Compose
 
 ```
 docker-compose up -d
