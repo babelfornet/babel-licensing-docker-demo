@@ -1,5 +1,5 @@
 # Start from the latest Ubuntu LTS image
-FROM ubuntu:22.04 as ubuntu-lts
+FROM ubuntu:22.04 AS ubuntu-lts
 
 # Add image metadata
 LABEL maintainer="babelfor.net"
