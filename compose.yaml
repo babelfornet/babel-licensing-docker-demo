@@ -27,7 +27,7 @@ services:
     build:
       dockerfile: WordPress.dockerfile
       context: .
-    image: babel-licensing-wordpress:latest
+    image: babel-licensing-wordpress:v11.0
     ports:
       - '8000:80'
     volumes:
@@ -54,20 +54,17 @@ services:
     build:
       dockerfile: AspNet.dockerfile
       context: .
-    image: babel-licensing-service:latest
+    image: babel-licensing-service:v11.0
     ports:
       - '5005:5005'
       - '5455:5455'
     volumes: 
       - type: bind
-        source: ./babel
-        target: /var/www/babel-lic
-      - type: bind
         source: ./appsettings.json
         target: /var/www/babel-lic/appsettings.json
       - type: bind
         source: ./babel.licenses
-        target: /var/www/babel-lic/babel.licenses       
+        target: /var/www/babel-lic/babel.licenses
       - type: bind
         source: ./HttpKeys.pfx
         target: /var/www/babel-lic/HttpKeys.pfx
@@ -79,9 +76,6 @@ services:
       BABEL_SERVICE_DATABASE__PROVIDER: MySQL
 
       # Connection strings environment variables
-      # SQL Server: BABEL_SERVICE_CONNECTIONSTRINGS__SQLSERVER
-      # MySQL: BABEL_SERVICE_CONNECTIONSTRINGS__MYSQL
-      # SQLite: BABEL_SERVICE_CONNECTIONSTRINGS__SQLITE
       BABEL_SERVICE_CONNECTIONSTRINGS__MYSQL: Server=db;User=root;Password=hjWrTSKa12PUoY;Database=licenses
       
     networks:
