@@ -3,9 +3,9 @@ FROM ubuntu:22.04 AS ubuntu-lts
 
 # Add image metadata
 LABEL maintainer="babelfor.net"
-LABEL name="babel-licensing-service-net8"
+LABEL name="babel-licensing-wordpress-woocommerce"
 LABEL version="11.0.0"
-LABEL description="Babel Licensing Servaice 11.0 with .NET 8.0 and MariaDB"
+LABEL description="Babel Licensing Plugin 11.0 (WordPress 6.7.1 with WooCommerce)"
 
 # Set the environment variable DEBIAN_FRONTEND to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
