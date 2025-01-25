@@ -5,5 +5,5 @@ babel/
 babel_service_net*.zip
 babel-licensing.zip
 
-# Ignore license file
-babel.licenses
+# Ignore MAC OS files
+.DS_Store
