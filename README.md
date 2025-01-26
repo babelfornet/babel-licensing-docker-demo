@@ -4,13 +4,13 @@ The Babel Licensing Docker Demo is a set of files designed to showcase the capab
 
 # Quick Start
 
-This Quick Start guide outlines the essential steps to set up and run the Babel Licensing Docker Demo. For more detailed instructions, please refer to the project [Wiki](https://github.com/babelfornet/babel-licensing-docker-demo/wiki) page.
+This Quick Start guide outlines the essential steps to set up and run the Babel Licensing Docker Demo. For more detailed instructions, please refer to the project [**Wiki**](https://github.com/babelfornet/babel-licensing-docker-demo/wiki) page.
 
 ### Prerequisites
 
 To use this demo, ensure you have the following prerequisites, which are included with the purchase of a [Babel Licensing](https://www.babelfor.net/shop/#babel-licensing) edition.
 
-> **Note:** If you have not purchased a Babel Licensing edition, you can request the application files by contacting **sales@babelfor.net**.
+> **Note:** If you have not purchased a Babel Licensing edition, you can request the application files by contacting sales@babelfor.net.
 
 1. Application Files
     - babel_service_net80_11.0.0.0.zip
