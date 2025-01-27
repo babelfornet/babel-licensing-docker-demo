@@ -4,6 +4,7 @@ babel/
 # Ignore application files
 babel_service_net*.zip
 babel-licensing.zip
+Babel.Licensing*.nupkg
 
 # Ignore MAC OS files
 .DS_Store
