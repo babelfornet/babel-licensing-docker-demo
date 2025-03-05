@@ -2,7 +2,7 @@
 babel/
 
 # Ignore application files
-babel_service_net*.zip
+babel_service_*.zip
 babel-licensing.zip
 Babel.Licensing*.nupkg
 
