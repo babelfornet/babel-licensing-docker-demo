@@ -27,7 +27,7 @@ services:
     build:
       dockerfile: WordPress.dockerfile
       context: .
-    image: babel-licensing-wordpress:v11.0
+    image: babel-licensing-wordpress:v11.5
     ports:
       - '8000:80'
     volumes:
@@ -54,7 +54,7 @@ services:
     build:
       dockerfile: AspNet.dockerfile
       context: .
-    image: babel-licensing-service:v11.0
+    image: babel-licensing-service:v11.5
     ports:
       - '5005:5005'
       - '5455:5455'
