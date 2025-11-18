@@ -13,8 +13,9 @@ To use this demo, ensure you have the following prerequisites, which are include
 > **Note:** If you have not purchased a Babel Licensing edition, you can request the application files by contacting sales@babelfor.net.
 
 1. Application Files
-    - babel_service_net80_11.0.0.0.zip
+    - babel_service_datacenter_net90_11.5.0.0.zip
     - babel-licensing.zip
+    - Babel.Licensing.11.5.0.nupkg
 2. License File (_babel.licenses_) or License Key (e.g. JXYIK-WIMAR-8HTOW-5ULM7)
 
 ### Startup
