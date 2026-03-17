@@ -1,30 +1,22 @@
--- MySQL dump 10.13  Distrib 5.7.23, for macos10.13 (x86_64)
---
--- Host: 127.0.0.1    Database: licenses
--- ------------------------------------------------------
--- Server version	11.3.2-MariaDB-1:11.3.2+maria~ubu2204
+/*M!999999\- enable the sandbox mode */ 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*M!100616 SET @OLD_NOTE_VERBOSITY=@@NOTE_VERBOSITY, NOTE_VERBOSITY=0 */;
 
-CREATE DATABASE IF NOT EXISTS licenses;
-USE licenses;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `licenses` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_uca1400_ai_ci */;
 
---
--- Table structure for table `ApiKeys`
---
-
+USE `licenses`;
 DROP TABLE IF EXISTS `ApiKeys`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ApiKeys` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Name` longtext DEFAULT NULL,
@@ -42,23 +34,17 @@ CREATE TABLE `ApiKeys` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `ApiKeys`
---
-
 LOCK TABLES `ApiKeys` WRITE;
 /*!40000 ALTER TABLE `ApiKeys` DISABLE KEYS */;
-INSERT INTO `ApiKeys` VALUES (1,'admin API Key','api_u3o7i1au2wycki8awj1kdmp8',NULL,'2025-01-17 06:53:48.530000',NULL,'7b167275-a36e-436b-91e8-1db8380be252',0,15,NULL);
+set autocommit=0;
+INSERT INTO `ApiKeys` VALUES
+(1,'admin API Key','api_u3o7i1au2wycki8awj1kdmp8',NULL,'2025-01-17 06:53:48.530000',NULL,'7b167275-a36e-436b-91e8-1db8380be252',0,15,NULL);
 /*!40000 ALTER TABLE `ApiKeys` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `AspNetRoleClaims`
---
-
+commit;
 DROP TABLE IF EXISTS `AspNetRoleClaims`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `AspNetRoleClaims` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `RoleId` varchar(255) NOT NULL,
@@ -70,22 +56,15 @@ CREATE TABLE `AspNetRoleClaims` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `AspNetRoleClaims`
---
-
 LOCK TABLES `AspNetRoleClaims` WRITE;
 /*!40000 ALTER TABLE `AspNetRoleClaims` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `AspNetRoleClaims` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `AspNetRoles`
---
-
+commit;
 DROP TABLE IF EXISTS `AspNetRoles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `AspNetRoles` (
   `Id` varchar(255) NOT NULL,
   `Name` varchar(256) DEFAULT NULL,
@@ -96,23 +75,21 @@ CREATE TABLE `AspNetRoles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `AspNetRoles`
---
-
 LOCK TABLES `AspNetRoles` WRITE;
 /*!40000 ALTER TABLE `AspNetRoles` DISABLE KEYS */;
-INSERT INTO `AspNetRoles` VALUES ('001bd9ac-1b89-45a8-b65d-b5a504ee8b86','Application','APPLICATION',NULL),('1d3bb402-872d-4888-8a34-9e8a493d41d9','Administrator','ADMINISTRATOR',NULL),('31bc5b7f-9490-4702-93b3-fa8d942a5b54','Customer','CUSTOMER',NULL),('4ea60054-5959-4e5a-b11f-85e10a0fc6ff','Sales','SALES',NULL),('f6a86e40-9af5-4925-a01f-9b7052d618b2','LicenseManager','LICENSEMANAGER',NULL);
+set autocommit=0;
+INSERT INTO `AspNetRoles` VALUES
+('001bd9ac-1b89-45a8-b65d-b5a504ee8b86','Application','APPLICATION',NULL),
+('1d3bb402-872d-4888-8a34-9e8a493d41d9','Administrator','ADMINISTRATOR',NULL),
+('31bc5b7f-9490-4702-93b3-fa8d942a5b54','Customer','CUSTOMER',NULL),
+('4ea60054-5959-4e5a-b11f-85e10a0fc6ff','Sales','SALES',NULL),
+('f6a86e40-9af5-4925-a01f-9b7052d618b2','LicenseManager','LICENSEMANAGER',NULL);
 /*!40000 ALTER TABLE `AspNetRoles` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `AspNetUserClaims`
---
-
+commit;
 DROP TABLE IF EXISTS `AspNetUserClaims`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `AspNetUserClaims` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `UserId` varchar(255) NOT NULL,
@@ -124,22 +101,15 @@ CREATE TABLE `AspNetUserClaims` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `AspNetUserClaims`
---
-
 LOCK TABLES `AspNetUserClaims` WRITE;
 /*!40000 ALTER TABLE `AspNetUserClaims` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `AspNetUserClaims` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `AspNetUserLogins`
---
-
+commit;
 DROP TABLE IF EXISTS `AspNetUserLogins`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `AspNetUserLogins` (
   `LoginProvider` varchar(255) NOT NULL,
   `ProviderKey` varchar(255) NOT NULL,
@@ -151,22 +121,15 @@ CREATE TABLE `AspNetUserLogins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `AspNetUserLogins`
---
-
 LOCK TABLES `AspNetUserLogins` WRITE;
 /*!40000 ALTER TABLE `AspNetUserLogins` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `AspNetUserLogins` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `AspNetUserRoles`
---
-
+commit;
 DROP TABLE IF EXISTS `AspNetUserRoles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `AspNetUserRoles` (
   `UserId` varchar(255) NOT NULL,
   `RoleId` varchar(255) NOT NULL,
@@ -177,23 +140,17 @@ CREATE TABLE `AspNetUserRoles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `AspNetUserRoles`
---
-
 LOCK TABLES `AspNetUserRoles` WRITE;
 /*!40000 ALTER TABLE `AspNetUserRoles` DISABLE KEYS */;
-INSERT INTO `AspNetUserRoles` VALUES ('7b167275-a36e-436b-91e8-1db8380be252','1d3bb402-872d-4888-8a34-9e8a493d41d9');
+set autocommit=0;
+INSERT INTO `AspNetUserRoles` VALUES
+('7b167275-a36e-436b-91e8-1db8380be252','1d3bb402-872d-4888-8a34-9e8a493d41d9');
 /*!40000 ALTER TABLE `AspNetUserRoles` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `AspNetUserTokens`
---
-
+commit;
 DROP TABLE IF EXISTS `AspNetUserTokens`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `AspNetUserTokens` (
   `UserId` varchar(255) NOT NULL,
   `LoginProvider` varchar(255) NOT NULL,
@@ -204,22 +161,15 @@ CREATE TABLE `AspNetUserTokens` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `AspNetUserTokens`
---
-
 LOCK TABLES `AspNetUserTokens` WRITE;
 /*!40000 ALTER TABLE `AspNetUserTokens` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `AspNetUserTokens` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `AspNetUsers`
---
-
+commit;
 DROP TABLE IF EXISTS `AspNetUsers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `AspNetUsers` (
   `Id` varchar(255) NOT NULL,
   `Title` longtext DEFAULT NULL,
@@ -264,23 +214,17 @@ CREATE TABLE `AspNetUsers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `AspNetUsers`
---
-
 LOCK TABLES `AspNetUsers` WRITE;
 /*!40000 ALTER TABLE `AspNetUsers` DISABLE KEYS */;
-INSERT INTO `AspNetUsers` VALUES ('7b167275-a36e-436b-91e8-1db8380be252',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'admin','ADMIN','admin@email.com','ADMIN@EMAIL.COM',0,'AQAAAAIAAYagAAAAEOH9UqYgmQxzo4WIU0VwXqZQTMF5nlIfSNTk5+bCn8gqoYDovc4IVc/fp0GmDuTegQ==','OEXW6ST7IJGLX3B3MIAVQCVOV5L3SCTS','75965345-077e-4082-90ac-89c3dd6ed6a7',NULL,0,0,NULL,1,0);
+set autocommit=0;
+INSERT INTO `AspNetUsers` VALUES
+('7b167275-a36e-436b-91e8-1db8380be252',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'admin','ADMIN','admin@email.com','ADMIN@EMAIL.COM',0,'AQAAAAIAAYagAAAAEOH9UqYgmQxzo4WIU0VwXqZQTMF5nlIfSNTk5+bCn8gqoYDovc4IVc/fp0GmDuTegQ==','OEXW6ST7IJGLX3B3MIAVQCVOV5L3SCTS','75965345-077e-4082-90ac-89c3dd6ed6a7',NULL,0,0,NULL,1,0);
 /*!40000 ALTER TABLE `AspNetUsers` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `Assemblies`
---
-
+commit;
 DROP TABLE IF EXISTS `Assemblies`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Assemblies` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Name` longtext DEFAULT NULL,
@@ -295,22 +239,15 @@ CREATE TABLE `Assemblies` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `Assemblies`
---
-
 LOCK TABLES `Assemblies` WRITE;
 /*!40000 ALTER TABLE `Assemblies` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `Assemblies` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `Contacts`
---
-
+commit;
 DROP TABLE IF EXISTS `Contacts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Contacts` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Title` longtext DEFAULT NULL,
@@ -330,22 +267,15 @@ CREATE TABLE `Contacts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `Contacts`
---
-
 LOCK TABLES `Contacts` WRITE;
 /*!40000 ALTER TABLE `Contacts` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `Contacts` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `CustomerResources`
---
-
+commit;
 DROP TABLE IF EXISTS `CustomerResources`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `CustomerResources` (
   `CustomerId` int(11) NOT NULL,
   `ResourceId` int(11) NOT NULL,
@@ -356,22 +286,15 @@ CREATE TABLE `CustomerResources` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `CustomerResources`
---
-
 LOCK TABLES `CustomerResources` WRITE;
 /*!40000 ALTER TABLE `CustomerResources` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `CustomerResources` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `Customers`
---
-
+commit;
 DROP TABLE IF EXISTS `Customers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Customers` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Title` longtext DEFAULT NULL,
@@ -407,22 +330,15 @@ CREATE TABLE `Customers` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `Customers`
---
-
 LOCK TABLES `Customers` WRITE;
 /*!40000 ALTER TABLE `Customers` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `Customers` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `DownloadHistories`
---
-
+commit;
 DROP TABLE IF EXISTS `DownloadHistories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `DownloadHistories` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `CreatedAt` datetime(6) NOT NULL,
@@ -434,22 +350,15 @@ CREATE TABLE `DownloadHistories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `DownloadHistories`
---
-
 LOCK TABLES `DownloadHistories` WRITE;
 /*!40000 ALTER TABLE `DownloadHistories` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `DownloadHistories` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `Downloads`
---
-
+commit;
 DROP TABLE IF EXISTS `Downloads`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Downloads` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Name` longtext DEFAULT NULL,
@@ -476,22 +385,15 @@ CREATE TABLE `Downloads` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `Downloads`
---
-
 LOCK TABLES `Downloads` WRITE;
 /*!40000 ALTER TABLE `Downloads` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `Downloads` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `LicenseTemplates`
---
-
+commit;
 DROP TABLE IF EXISTS `LicenseTemplates`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `LicenseTemplates` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Name` longtext DEFAULT NULL,
@@ -520,23 +422,17 @@ CREATE TABLE `LicenseTemplates` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `LicenseTemplates`
---
-
 LOCK TABLES `LicenseTemplates` WRITE;
 /*!40000 ALTER TABLE `LicenseTemplates` DISABLE KEYS */;
-INSERT INTO `LicenseTemplates` VALUES (1,'Licensed Product License Template','','XML','',0,'Licensed Product license template','<Licenses xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <License issueDate=\"2025-01-18T14:04:02.6599643Z\" supportExpireDate=\"2026-01-18T14:04:02.6599643Z\" type=\"Full\">\n    <Product name=\"Licensed Product\">\n      <Description>Licensed Test Product</Description>\n    </Product>\n  </License>\n</Licenses>',1,NULL,NULL,NULL,1,'Full',1,365,'');
+set autocommit=0;
+INSERT INTO `LicenseTemplates` VALUES
+(1,'Licensed Product License Template','','XML','',0,'Licensed Product license template','<Licenses xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <License issueDate=\"2025-01-18T14:04:02.6599643Z\" supportExpireDate=\"2026-01-18T14:04:02.6599643Z\" type=\"Full\">\n    <Product name=\"Licensed Product\">\n      <Description>Licensed Test Product</Description>\n    </Product>\n  </License>\n</Licenses>',1,NULL,NULL,NULL,1,'Full',1,365,'');
 /*!40000 ALTER TABLE `LicenseTemplates` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `LicenseTokens`
---
-
+commit;
 DROP TABLE IF EXISTS `LicenseTokens`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `LicenseTokens` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Token` longtext DEFAULT NULL,
@@ -555,25 +451,20 @@ CREATE TABLE `LicenseTokens` (
   KEY `IX_LicenseTokens_NodeLockedLicenseId` (`NodeLockedLicenseId`),
   CONSTRAINT `FK_LicenseTokens_Licenses_LicenseId` FOREIGN KEY (`LicenseId`) REFERENCES `Licenses` (`Id`),
   CONSTRAINT `FK_LicenseTokens_Licenses_NodeLockedLicenseId` FOREIGN KEY (`NodeLockedLicenseId`) REFERENCES `Licenses` (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `LicenseTokens`
---
 
 LOCK TABLES `LicenseTokens` WRITE;
 /*!40000 ALTER TABLE `LicenseTokens` DISABLE KEYS */;
+set autocommit=0;
+INSERT INTO `LicenseTokens` VALUES
+(1,'actk_ajwjcfzhu8dn','185.85.0.29','ConsoleApp','Mac','ADSQH-89GGJ-J7CJY-3FQFK-DF48H','2025-12-13 15:43:16.265750','2025-12-10 16:42:00.000000','2025-12-13 15:44:02.744747','6/fc3ft6wfYOMxvyoFGzvA==',2,3);
 /*!40000 ALTER TABLE `LicenseTokens` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `LicenseTraces`
---
-
+commit;
 DROP TABLE IF EXISTS `LicenseTraces`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `LicenseTraces` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `ClientIp` longtext DEFAULT NULL,
@@ -591,23 +482,17 @@ CREATE TABLE `LicenseTraces` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `LicenseTraces`
---
-
 LOCK TABLES `LicenseTraces` WRITE;
 /*!40000 ALTER TABLE `LicenseTraces` DISABLE KEYS */;
-INSERT INTO `LicenseTraces` VALUES (1,'::ffff:172.18.0.4',NULL,NULL,'2025-01-18 14:03:27.014492',1,NULL,NULL,1,NULL);
+set autocommit=0;
+INSERT INTO `LicenseTraces` VALUES
+(1,'::ffff:172.18.0.4',NULL,NULL,'2025-01-18 14:03:27.014492',1,NULL,NULL,1,NULL);
 /*!40000 ALTER TABLE `LicenseTraces` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `Licenses`
---
-
+commit;
 DROP TABLE IF EXISTS `Licenses`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Licenses` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `LicenseId` longtext DEFAULT NULL,
@@ -643,25 +528,16 @@ CREATE TABLE `Licenses` (
   CONSTRAINT `FK_Licenses_LicenseTemplates_TemplateId` FOREIGN KEY (`TemplateId`) REFERENCES `LicenseTemplates` (`Id`),
   CONSTRAINT `FK_Licenses_Orders_OrderId` FOREIGN KEY (`OrderId`) REFERENCES `Orders` (`Id`),
   CONSTRAINT `FK_Licenses_Resources_SignatureKeysId` FOREIGN KEY (`SignatureKeysId`) REFERENCES `Resources` (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `Licenses`
---
 
 LOCK TABLES `Licenses` WRITE;
 /*!40000 ALTER TABLE `Licenses` DISABLE KEYS */;
 /*!40000 ALTER TABLE `Licenses` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `Logs`
---
-
 DROP TABLE IF EXISTS `Logs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Logs` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Message` longtext DEFAULT NULL,
@@ -674,22 +550,15 @@ CREATE TABLE `Logs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `Logs`
---
-
 LOCK TABLES `Logs` WRITE;
 /*!40000 ALTER TABLE `Logs` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `Logs` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `OrderResources`
---
-
+commit;
 DROP TABLE IF EXISTS `OrderResources`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `OrderResources` (
   `OrderId` int(11) NOT NULL,
   `ResourceId` int(11) NOT NULL,
@@ -700,22 +569,15 @@ CREATE TABLE `OrderResources` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `OrderResources`
---
-
 LOCK TABLES `OrderResources` WRITE;
 /*!40000 ALTER TABLE `OrderResources` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `OrderResources` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `Orders`
---
-
+commit;
 DROP TABLE IF EXISTS `Orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Orders` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `OrderNumber` longtext DEFAULT NULL,
@@ -746,22 +608,15 @@ CREATE TABLE `Orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `Orders`
---
-
 LOCK TABLES `Orders` WRITE;
 /*!40000 ALTER TABLE `Orders` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `Orders` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `ProductAssemblies`
---
-
+commit;
 DROP TABLE IF EXISTS `ProductAssemblies`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ProductAssemblies` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `ProductId` int(11) NOT NULL,
@@ -777,22 +632,15 @@ CREATE TABLE `ProductAssemblies` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `ProductAssemblies`
---
-
 LOCK TABLES `ProductAssemblies` WRITE;
 /*!40000 ALTER TABLE `ProductAssemblies` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `ProductAssemblies` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `ProductLicenses`
---
-
+commit;
 DROP TABLE IF EXISTS `ProductLicenses`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ProductLicenses` (
   `ProductId` int(11) NOT NULL,
   `LicenseId` int(11) NOT NULL,
@@ -803,22 +651,15 @@ CREATE TABLE `ProductLicenses` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `ProductLicenses`
---
-
 LOCK TABLES `ProductLicenses` WRITE;
 /*!40000 ALTER TABLE `ProductLicenses` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `ProductLicenses` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `ProductOrders`
---
-
+commit;
 DROP TABLE IF EXISTS `ProductOrders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ProductOrders` (
   `ProductId` int(11) NOT NULL,
   `OrderId` int(11) NOT NULL,
@@ -834,22 +675,15 @@ CREATE TABLE `ProductOrders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `ProductOrders`
---
-
 LOCK TABLES `ProductOrders` WRITE;
 /*!40000 ALTER TABLE `ProductOrders` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `ProductOrders` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `ProductResources`
---
-
+commit;
 DROP TABLE IF EXISTS `ProductResources`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ProductResources` (
   `ProductId` int(11) NOT NULL,
   `ResourceId` int(11) NOT NULL,
@@ -860,22 +694,15 @@ CREATE TABLE `ProductResources` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `ProductResources`
---
-
 LOCK TABLES `ProductResources` WRITE;
 /*!40000 ALTER TABLE `ProductResources` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `ProductResources` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `Products`
---
-
+commit;
 DROP TABLE IF EXISTS `Products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Products` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Code` longtext DEFAULT NULL,
@@ -896,23 +723,17 @@ CREATE TABLE `Products` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `Products`
---
-
 LOCK TABLES `Products` WRITE;
 /*!40000 ALTER TABLE `Products` DISABLE KEYS */;
-INSERT INTO `Products` VALUES (1,'TP1','Licensed Product','Licensed Test Product',NULL,NULL,'2025-01-17 07:43:05.000000','',0.0000,0.0000,'USD',1,NULL);
+set autocommit=0;
+INSERT INTO `Products` VALUES
+(1,'TP1','Licensed Product','Licensed Test Product',NULL,NULL,'2025-01-17 07:43:05.000000','',0.0000,0.0000,'USD',1,NULL);
 /*!40000 ALTER TABLE `Products` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `ReleaseResources`
---
-
+commit;
 DROP TABLE IF EXISTS `ReleaseResources`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ReleaseResources` (
   `ReleaseId` int(11) NOT NULL,
   `ResourceId` int(11) NOT NULL,
@@ -923,22 +744,15 @@ CREATE TABLE `ReleaseResources` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `ReleaseResources`
---
-
 LOCK TABLES `ReleaseResources` WRITE;
 /*!40000 ALTER TABLE `ReleaseResources` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `ReleaseResources` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `Releases`
---
-
+commit;
 DROP TABLE IF EXISTS `Releases`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Releases` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `ReleaseDate` datetime(6) NOT NULL,
@@ -949,22 +763,15 @@ CREATE TABLE `Releases` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `Releases`
---
-
 LOCK TABLES `Releases` WRITE;
 /*!40000 ALTER TABLE `Releases` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `Releases` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `ReportProperties`
---
-
+commit;
 DROP TABLE IF EXISTS `ReportProperties`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ReportProperties` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Name` longtext DEFAULT NULL,
@@ -976,22 +783,15 @@ CREATE TABLE `ReportProperties` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `ReportProperties`
---
-
 LOCK TABLES `ReportProperties` WRITE;
 /*!40000 ALTER TABLE `ReportProperties` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `ReportProperties` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `Reports`
---
-
+commit;
 DROP TABLE IF EXISTS `Reports`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Reports` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Uid` longtext DEFAULT NULL,
@@ -1009,22 +809,15 @@ CREATE TABLE `Reports` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `Reports`
---
-
 LOCK TABLES `Reports` WRITE;
 /*!40000 ALTER TABLE `Reports` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `Reports` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `Resources`
---
-
+commit;
 DROP TABLE IF EXISTS `Resources`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Resources` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Name` longtext DEFAULT NULL,
@@ -1033,7 +826,7 @@ CREATE TABLE `Resources` (
   `Description` longtext DEFAULT NULL,
   `Source` longtext DEFAULT NULL,
   `Password` longtext DEFAULT NULL,
-  `CreatedAt` datetime(6) NOT NULL,
+  `CreatedAt` datetime(6) DEFAULT NULL,
   `UpdatedAt` datetime(6) DEFAULT NULL,
   `Data` longblob DEFAULT NULL,
   `DataFormat` longtext DEFAULT NULL,
@@ -1042,25 +835,18 @@ CREATE TABLE `Resources` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `Resources`
---
-
 LOCK TABLES `Resources` WRITE;
 /*!40000 ALTER TABLE `Resources` DISABLE KEYS */;
-INSERT INTO `Resources` (`Id`, `Name`, `Type`, `Code`, `Description`, `Source`, `Password`, `CreatedAt`, `UpdatedAt`, `Data`, `DataFormat`, `Meta`) VALUES
-(1, 'Keys', 'RSA', NULL, NULL, 'Keys.snk', NULL, '2025-01-18 20:12:33.458937', NULL, X'07020000002400005253413200040000010001000D6E4C8A9CFC8651DC909BCBCF01E29F3E5AA23CDC81F5638E2BA849F8850D853E2B65D8A7695C2E6B9211B00CA9C39741D3AB8E8C90EEB8C35BF846E097AEC436B14A5604733BF7FD4490B09DFC0D1004D171BCB95C841279AB7D34BBC467316F4BAB7F33E69BE3C8D07124469DF122235835BBF72A59257EFADA216254D5C47F0EFA749791F82B3470FD7B093E85160F1C6A46F31E71E6A670E9758536C6999B8C84E5AC5BF098A214D17F402220DA171E7ACD52E082D45E8AEF86469CDCE373957858355C8F19B912275183A84D94104ED52EEFFF60CB72C7A4F15E18CB6A291357EFF7043D343E9D3C16EC06450DDE2D870801517E3BD277BEC251D123DDB18DE81818A01976B092BE87D0298C682F915AA015DEDA118722D4E875AF423F452245B5F3D9456543FA940BFA1BA85C13DB2D216EA7AD5A8D447814C8C62B188B836F26185387515D241FE125F090E996292199D86C6C049529D99BCAA433D2E8E938267827DCED506CD0B137D7716F5F0CDD799B8076882BDA8F174CADE36829E4DFA8607393DF0C626B4576A5E234F14270D0E317E9EB6E7DD1F2D3C3635E2B3166EF0668DD97604C09560D182689D033A2213F4654DEC195D69864F94947D94B756E9F4723645CAC13D915198A517F0E93EE65C1F46567627128343D6AFC54076E802EEA1409F12C2C38B43BB296B861B675596BD6A9B66662465A596779DE132F9665DDB8097A894339180FDCB2E1A3E0A13BB51695B76E6EEB54D6C4397B4BFF73AA592D9A7A542581A7F904771AE7465BE973DCE62656231700807272', 'SNK', NULL),
-(3, 'New License', 'email', NULL, 'Sent to customer when a new license is purchased.', NULL, NULL, '2025-01-20 07:50:32.007000', '2025-01-23 09:31:21.940111', '<p><span style=\"color: rgb(0, 0, 0);\">Dear <span class=\"dx-variable\" data-var-start-esc-char=\"{\" data-var-end-esc-char=\"}\" data-var-value=\"CustomerName\">﻿<span contenteditable=\"false\">{CustomerName}</span>﻿</span>,</span></p><p><span style=\"color: rgb(0, 0, 0);\">Thank you very much for purchasing <span class=\"dx-variable\" data-var-start-esc-char=\"{\" data-var-end-esc-char=\"}\" data-var-value=\"ProductName\">﻿<span contenteditable=\"false\">{ProductName}</span>﻿</span> license.<br>You can download the setup packages for 32 and 64-bit platforms from:</span></p><p><a href=\"{ProductDownload}\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(0, 0, 0);\"><span class=\"dx-variable\" data-var-start-esc-char=\"{\" data-var-end-esc-char=\"}\" data-var-value=\"ProductDownload\">﻿<span contenteditable=\"false\">{ProductDownload}</span>﻿</span></a></p><p><span style=\"color: rgb(0, 0, 0);\">Your license <span class=\"dx-variable\" data-var-start-esc-char=\"{\" data-var-end-esc-char=\"}\" data-var-value=\"LicenseId\">﻿<span contenteditable=\"false\">{LicenseId}</span>﻿</span> Key:</span></p><p><strong style=\"color: rgb(0, 0, 0); font-size: 12pt;\"><span class=\"dx-variable\" data-var-start-esc-char=\"{\" data-var-end-esc-char=\"}\" data-var-value=\"UserKey\">﻿<span contenteditable=\"false\">{UserKey}</span>﻿</span></strong></p><h2><span style=\"color: rgb(0, 0, 0);\">What&#39;s New</span></h2><p><span style=\"color: rgb(0, 0, 0); font-family: Helvetica;\">For more detailed information about the new features, enhancements, and bug fixes introduced in this release, please refer to the release notes at: </span></p><p><a href=\"https://www.acme.com/releasenotes\" rel=\"noopener noreferrer\" target=\"_blank\">https://www.acme.com/releasenotes</a></p><p><span style=\"color: rgb(0, 0, 0);\">Should you have any questions about this release, feel free to contact our support team.</span></p><p><span style=\"color: rgb(0, 0, 0);\">Thank you,<br>Kind Regards</span></p>', 'html', '{\"enable_send\":\"true\",\"email_subject\":\"{ProductName} License\",\"email_cc\":\"\",\"email_bcc\":\"\"}');
+set autocommit=0;
+INSERT INTO `Resources` VALUES
+(1,'Keys','RSA',NULL,NULL,'Keys.snk',NULL,'2025-01-18 20:12:33.458937',NULL,'\0\0\0$\0\0RSA2\0\0\0\0\0\rnL����Qܐ�\�\�\�>Z�<܁\�c�+�I��\r�>+eاi\\.k���×Aӫ���\�\�[�F\���\�6�JVs;\��D����\r\�q��\\�y�}4�\�g1oK�3\�\�\�\�q$F�\�\"#X5�\�*Y%~�\�!bT\�\��t���+4p�{	>�jF\�q\�p\�u�6ƙ���\�[\�\�@\" \�z\�R\��\�^�\�F�\�\�s�xX5\\��\'Q��M�N\�.\��`\�rǤ\�^\�j)W\�\�=4>�<\�E\r\�-�Q~;\�w�\�Q\�#ݱ�\��v����\�)�h/�Z�\�\��\"\�\�u�B?E\"E�\�\�EeC����\\\�-!n��Z�Dx\�\�+��o&S�Q]$\�%\�\�)!�\�ll�)ٛʤ3\�\�\�8&x\'\�\�Plб7\�qo_\�y��v�+ڏL�\�h)\�ߨ`s�\�bkEv�\�4\�Bp\�\�\�\�n}\�\�\�\�c^+1f\�hݗ`L	V\r&�\�3�!?FT\���֘d�IG\�Kun�G#d\\�\��Q�\�e�\�egbq(4=j�Tn�.\�	\�,,8�;���a�uYk֩�fbFZYgy\�/�eݸ	z�C9ܲ\�\�;���nn\�T\�\�9{K�s�Y-�zT%���w\Z\�F[\�s\�\�&V#\0�rr','SNK',NULL),
+(3,'New License','email',NULL,'Sent to customer when a new license is purchased.',NULL,NULL,'2025-01-20 07:50:32.007000','2025-01-23 09:31:21.940111','<p><span style=\"color: rgb(0, 0, 0);\">Dear <span class=\"dx-variable\" data-var-start-esc-char=\"{\" data-var-end-esc-char=\"}\" data-var-value=\"CustomerName\">﻿<span contenteditable=\"false\">{CustomerName}</span>﻿</span>,</span></p><p><span style=\"color: rgb(0, 0, 0);\">Thank you very much for purchasing <span class=\"dx-variable\" data-var-start-esc-char=\"{\" data-var-end-esc-char=\"}\" data-var-value=\"ProductName\">﻿<span contenteditable=\"false\">{ProductName}</span>﻿</span> license.<br>You can download the setup packages for 32 and 64-bit platforms from:</span></p><p><a href=\"{ProductDownload}\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(0, 0, 0);\"><span class=\"dx-variable\" data-var-start-esc-char=\"{\" data-var-end-esc-char=\"}\" data-var-value=\"ProductDownload\">﻿<span contenteditable=\"false\">{ProductDownload}</span>﻿</span></a></p><p><span style=\"color: rgb(0, 0, 0);\">Your license <span class=\"dx-variable\" data-var-start-esc-char=\"{\" data-var-end-esc-char=\"}\" data-var-value=\"LicenseId\">﻿<span contenteditable=\"false\">{LicenseId}</span>﻿</span> Key:</span></p><p><strong style=\"color: rgb(0, 0, 0); font-size: 12pt;\"><span class=\"dx-variable\" data-var-start-esc-char=\"{\" data-var-end-esc-char=\"}\" data-var-value=\"UserKey\">﻿<span contenteditable=\"false\">{UserKey}</span>﻿</span></strong></p><h2><span style=\"color: rgb(0, 0, 0);\">What&#39;s New</span></h2><p><span style=\"color: rgb(0, 0, 0); font-family: Helvetica;\">For more detailed information about the new features, enhancements, and bug fixes introduced in this release, please refer to the release notes at: </span></p><p><a href=\"https://www.acme.com/releasenotes\" rel=\"noopener noreferrer\" target=\"_blank\">https://www.acme.com/releasenotes</a></p><p><span style=\"color: rgb(0, 0, 0);\">Should you have any questions about this release, feel free to contact our support team.</span></p><p><span style=\"color: rgb(0, 0, 0);\">Thank you,<br>Kind Regards</span></p>','html','{\"enable_send\":\"true\",\"email_subject\":\"{ProductName} License\",\"email_cc\":\"\",\"email_bcc\":\"\"}');
 /*!40000 ALTER TABLE `Resources` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `ScriptTag`
---
-
+commit;
 DROP TABLE IF EXISTS `ScriptTag`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ScriptTag` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Version` longtext DEFAULT NULL,
@@ -1076,22 +862,15 @@ CREATE TABLE `ScriptTag` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `ScriptTag`
---
-
 LOCK TABLES `ScriptTag` WRITE;
 /*!40000 ALTER TABLE `ScriptTag` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `ScriptTag` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `Scripts`
---
-
+commit;
 DROP TABLE IF EXISTS `Scripts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Scripts` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Name` longtext DEFAULT NULL,
@@ -1110,22 +889,15 @@ CREATE TABLE `Scripts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `Scripts`
---
-
 LOCK TABLES `Scripts` WRITE;
 /*!40000 ALTER TABLE `Scripts` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `Scripts` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `Settings`
---
-
+commit;
 DROP TABLE IF EXISTS `Settings`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Settings` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Category` longtext DEFAULT NULL,
@@ -1142,22 +914,71 @@ CREATE TABLE `Settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `Settings`
---
-
 LOCK TABLES `Settings` WRITE;
 /*!40000 ALTER TABLE `Settings` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `Settings` ENABLE KEYS */;
 UNLOCK TABLES;
+commit;
+DROP TABLE IF EXISTS `WebhookEvents`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `WebhookEvents` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `WebhookSubscriptionId` int(11) NOT NULL,
+  `EventType` longtext DEFAULT NULL,
+  `Payload` longtext DEFAULT NULL,
+  `Response` longtext DEFAULT NULL,
+  `StatusCode` int(11) DEFAULT NULL,
+  `CreatedAt` datetime(6) NOT NULL,
+  `SentAt` datetime(6) DEFAULT NULL,
+  `ErrorMessage` longtext DEFAULT NULL,
+  `RetryCount` int(11) NOT NULL,
+  `NextRetryAt` datetime(6) DEFAULT NULL,
+  `IsSuccess` tinyint(1) NOT NULL,
+  `ObjectId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `IX_WebhookEvents_WebhookSubscriptionId` (`WebhookSubscriptionId`),
+  CONSTRAINT `FK_WebhookEvents_WebhookSubscriptions_WebhookSubscriptionId` FOREIGN KEY (`WebhookSubscriptionId`) REFERENCES `WebhookSubscriptions` (`Id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `__EFMigrationsHistory`
---
+LOCK TABLES `WebhookEvents` WRITE;
+/*!40000 ALTER TABLE `WebhookEvents` DISABLE KEYS */;
+set autocommit=0;
+/*!40000 ALTER TABLE `WebhookEvents` ENABLE KEYS */;
+UNLOCK TABLES;
+commit;
+DROP TABLE IF EXISTS `WebhookSubscriptions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `WebhookSubscriptions` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` longtext DEFAULT NULL,
+  `EventType` longtext DEFAULT NULL,
+  `Url` longtext DEFAULT NULL,
+  `Secret` longtext DEFAULT NULL,
+  `UserId` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `IsActive` tinyint(1) NOT NULL,
+  `CreatedAt` datetime(6) DEFAULT NULL,
+  `UpdatedAt` datetime(6) DEFAULT NULL,
+  `Headers` longtext DEFAULT NULL,
+  `MaxRetryCount` int(11) NOT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `FK_WebhookSubscriptions_AspNetUsers_UserId` (`UserId`),
+  CONSTRAINT `FK_WebhookSubscriptions_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `AspNetUsers` (`Id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+LOCK TABLES `WebhookSubscriptions` WRITE;
+/*!40000 ALTER TABLE `WebhookSubscriptions` DISABLE KEYS */;
+set autocommit=0;
+/*!40000 ALTER TABLE `WebhookSubscriptions` ENABLE KEYS */;
+UNLOCK TABLES;
+commit;
 DROP TABLE IF EXISTS `__EFMigrationsHistory`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `__EFMigrationsHistory` (
   `MigrationId` varchar(150) NOT NULL,
   `ProductVersion` varchar(32) NOT NULL,
@@ -1165,19 +986,20 @@ CREATE TABLE `__EFMigrationsHistory` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `__EFMigrationsHistory`
---
-
 LOCK TABLES `__EFMigrationsHistory` WRITE;
 /*!40000 ALTER TABLE `__EFMigrationsHistory` DISABLE KEYS */;
-INSERT INTO `__EFMigrationsHistory` VALUES ('20230506062747_InitialCreate','8.0.11'),('20231203102929_AddApiKey','8.0.11'),('20240303012534_AddedLicenseeAndTemplateUserKey','8.0.11'),('20240313135659_AddMetaColum','8.0.11'),('20240328144418_AddLicenseTrace','8.0.11'),('20241206143314_AddLicenseTraceClientId','8.0.11');
+set autocommit=0;
+INSERT INTO `__EFMigrationsHistory` VALUES
+('20230506062747_InitialCreate','8.0.11'),
+('20231203102929_AddApiKey','8.0.11'),
+('20240303012534_AddedLicenseeAndTemplateUserKey','8.0.11'),
+('20240313135659_AddMetaColum','8.0.11'),
+('20240328144418_AddLicenseTrace','8.0.11'),
+('20241206143314_AddLicenseTraceClientId','8.0.11'),
+('20250307165541_AddWebhooks','9.0.6');
 /*!40000 ALTER TABLE `__EFMigrationsHistory` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping routines for database 'licenses'
---
+commit;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -1186,6 +1008,5 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
--- Dump completed on 2025-01-20  9:00:12

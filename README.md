@@ -13,9 +13,9 @@ To use this demo, ensure you have the following prerequisites, which are include
 > **Note:** If you have not purchased a Babel Licensing edition, you can request the application files by contacting sales@babelfor.net.
 
 1. Application Files
-    - babel_service_datacenter_net90_11.5.0.0.zip
+    - babel_service_datacenter_net90_11.6.0.0.zip
     - babel-licensing.zip
-    - Babel.Licensing.11.5.0.nupkg
+    - Babel.Licensing.11.6.0.nupkg
 2. License File (_babel.licenses_) or License Key (e.g. JXYIK-WIMAR-8HTOW-5ULM7)
 
 ### Startup
@@ -48,6 +48,27 @@ Once the container is started the following services are avaiable:
     - Password: admin
 - [Babel Licensing Api](https://localhost:5455/swagger/)
     - Authorize ApiKey: api_u3o7i1au2wycki8awj1kdmp8
+
+### .NET Client Examples
+
+Three .NET 9 console examples are included to test the licensing features:
+
+| Example | Description |
+|---------|-------------|
+| `license-activation-console-example` | Demonstrates license activation and deactivation |
+| `floating-license-console-example` | Demonstrates floating license request, validation and release |
+| `console-exception-report-example` | Demonstrates exception reporting to the licensing server |
+
+To build and run an example:
+
+```
+cd license-activation-console-example
+dotnet run
+```
+
+The examples connect to the local Docker services via gRPC (`http://localhost:5005`) or HTTPS (`https://localhost:5455`).
+
+You can create test licenses from the [Babel Licensing Web](https://localhost:5455/) dashboard or via the [API](https://localhost:5455/swagger/).
 
 ### Shutdown
 
