@@ -5,6 +5,7 @@ babel/
 babel_service_*.zip
 babel-licensing.zip
 Babel.Licensing*.nupkg
+Babel.Obfuscator*.nupkg
 
 # Ignore MAC OS files
 .DS_Store
