@@ -13,9 +13,9 @@ To use this demo, ensure you have the following prerequisites, which are include
 > **Note:** If you have not purchased a Babel Licensing edition, you can request the application files by contacting sales@babelfor.net.
 
 1. Application Files
-    - babel_service_datacenter_net90_11.6.0.0.zip
+    - babel_service_datacenter_net90_11.7.0.0.zip
     - babel-licensing.zip
-    - Babel.Licensing.11.6.0.nupkg
+    - Babel.Licensing.11.7.0.nupkg
 2. License File (_babel.licenses_) or License Key (e.g. JXYIK-WIMAR-8HTOW-5ULM7)
 
 ### Startup
@@ -39,15 +39,17 @@ docker compose up -d
 
 Once the container is started the following services are avaiable:
 
-- [WordPress Home](http://localhost:8000/)
-- [WordPress Admin](http://localhost:8000/wp-admin/) 
-    - Username: admin 
+- [WordPress Home](http://localhost:8001/)
+- [WordPress Admin](http://localhost:8001/wp-admin/)
+    - Username: admin
     - Password: admin
 - [Babel Licensing Web](https://localhost:5455/)
-    - Username: admin 
+    - Username: admin
     - Password: admin
 - [Babel Licensing Api](https://localhost:5455/swagger/)
     - Authorize ApiKey: api_u3o7i1au2wycki8awj1kdmp8
+
+> **Note:** The compose file maps WordPress to host port `8001` and the MariaDB container to host port `6606` to avoid collisions with other services on the host. Adjust [compose.yaml](compose.yaml) if you need different ports.
 
 ### .NET Client Examples
 
@@ -66,7 +68,7 @@ cd license-activation-console-example
 dotnet run
 ```
 
-The examples connect to the local Docker services via gRPC (`http://localhost:5005`) or HTTPS (`https://localhost:5455`).
+The examples are configured to connect to the local Docker services over HTTPS (`https://localhost:5455`) using the `UseHttp` transport. You can switch them to gRPC (`http://localhost:5005`) by editing the `ServiceUrl` in `Program.cs` and removing the `UseHttp(...)` block.
 
 You can create test licenses from the [Babel Licensing Web](https://localhost:5455/) dashboard or via the [API](https://localhost:5455/swagger/).
 
