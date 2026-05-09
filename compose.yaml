@@ -6,8 +6,9 @@ services:
     ports:
       - '6606:3306'
     volumes:
-      - ./wordpress.sql:/docker-entrypoint-initdb.d/wordpress.sql
-      - ./licenses.sql:/docker-entrypoint-initdb.d/licenses.sql
+      - ./wordpress.sql:/docker-entrypoint-initdb.d/01-wordpress.sql
+      - ./licenses.sql:/docker-entrypoint-initdb.d/02-licenses.sql
+      - ./licenses-fix-keys.sql:/docker-entrypoint-initdb.d/03-licenses-fix-keys.sql
     environment:
       MARIADB_ROOT_PASSWORD: hjWrTSKa12PUoY
       MARIADB_DATABASE: wordpress
