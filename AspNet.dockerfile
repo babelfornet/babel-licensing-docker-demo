@@ -2,21 +2,21 @@ FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
 
 # Add image metadata
 LABEL maintainer="babelfor.net"
-LABEL name="babel-licensing-service-net9-11.6.0"
-LABEL version="11.6.0"
-LABEL description="Babel Licensing Service 11.6.0 (.NET 9.0)"
+LABEL name="babel-licensing-service-net9-11.7.0"
+LABEL version="11.7.0"
+LABEL description="Babel Licensing Service 11.7.0 (.NET 9.0)"
 
 # Update Ubuntu Software repository
 RUN apt-get update
 
 # Install unzip
-RUN apt-get install -y unzip 
+RUN apt-get install -y unzip
 
-# Unzip babel_service_datacenter_net90_11.6.0.0.zip to the /var/www/babel-lic directory
-COPY babel_service_datacenter_net90_11.6.0.0.zip /tmp/
+# Unzip babel_service_datacenter_net90_11.7.0.0.zip to the /var/www/babel-lic directory
+COPY babel_service_datacenter_net90_11.7.0.0.zip /tmp/
 RUN mkdir -p /var/www/babel-lic && \
-    unzip /tmp/babel_service_datacenter_net90_11.6.0.0.zip -d /var/www/babel-lic && \
-    rm /tmp/babel_service_datacenter_net90_11.6.0.0.zip
+    unzip /tmp/babel_service_datacenter_net90_11.7.0.0.zip -d /var/www/babel-lic && \
+    rm /tmp/babel_service_datacenter_net90_11.7.0.0.zip
 
 # Expose service ports
 EXPOSE 5005

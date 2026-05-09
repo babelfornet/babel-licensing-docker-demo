@@ -4,7 +4,7 @@ services:
     image: mariadb:latest
     restart: always
     ports:
-      - '6603:3306'
+      - '6606:3306'
     volumes:
       - ./wordpress.sql:/docker-entrypoint-initdb.d/wordpress.sql
       - ./licenses.sql:/docker-entrypoint-initdb.d/licenses.sql
@@ -27,9 +27,9 @@ services:
     build:
       dockerfile: WordPress.dockerfile
       context: .
-    image: babel-licensing-wordpress:v11.6
+    image: babel-licensing-wordpress:v11.7
     ports:
-      - '8000:80'
+      - '8001:80'
     volumes:
       - type: bind
         source: ./docker-uploads.ini
@@ -54,7 +54,7 @@ services:
     build:
       dockerfile: AspNet.dockerfile
       context: .
-    image: babel-licensing-service:v11.6
+    image: babel-licensing-service:v11.7
     ports:
       - '5005:5005'
       - '5455:5455'
