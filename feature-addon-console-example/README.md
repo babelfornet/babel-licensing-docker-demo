@@ -11,6 +11,18 @@ It answers two questions that come up a lot:
 2. **Can the support period start counting from first activation instead of from
    a fixed issue date?** — Yes.
 
+> **License mode:** this example uses **activation** licenses (`licensingMode: 1`),
+> i.e. each key is activated once and bound to the machine. That is why it calls
+> `ActivateLicenseAsync` / `ValidateLicenseAsync` (not the floating API), and why
+> the support window can be anchored to a stable *first activation* date.
+>
+> The modular add-on idea (one license per `Type`, each with its own key) works
+> for **floating** licenses too — just create the licenses with `licensingMode: 2`
+> and replace the activate/validate calls with `RequestFloatingLicenseAsync` /
+> `ReleaseFloatingLicenseAsync` (see [`floating-license-console-example`](../floating-license-console-example/)).
+> With floating licenses there is no permanent activation, so anchor the support
+> period to a server-side event (e.g. the first license request) instead.
+
 ## 1) Modular add-on licenses (base + reseller add-on)
 
 You are **not limited to a single license**. Each licensed component is
