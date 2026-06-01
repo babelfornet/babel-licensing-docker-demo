@@ -67,13 +67,14 @@ The HTTPS endpoint uses the self-signed certificate in [HttpKeys.pfx](HttpKeys.p
 
 ### .NET Client Examples
 
-Three .NET 9 console examples are included to exercise the licensing features:
+Four .NET 9 console examples are included to exercise the licensing features:
 
 | Example | Description |
 |---------|-------------|
 | [`license-activation-console-example`](license-activation-console-example/) | Demonstrates license activation, validation, and deactivation |
 | [`floating-license-console-example`](floating-license-console-example/) | Demonstrates floating license request, validation, and release |
 | [`console-exception-report-example`](console-exception-report-example/) | Demonstrates exception reporting to the licensing server |
+| [`feature-addon-console-example`](feature-addon-console-example/) | Demonstrates modular add-on licenses (base + reseller add-on) and an activation-anchored support period |
 
 Each example is a standalone `dotnet` console project that resolves `Babel.Licensing` from the `Babel.Licensing.11.7.0.nupkg` you placed in the repo root (via the local `nuget.config`).
 
@@ -98,6 +99,13 @@ curl -sk -X POST "$BASE/v1/licenses" -H "x-api-key: $API" -H "Content-Type: appl
 # Exception-report license — uses the fixed userKey hard-coded in the example
 curl -sk -X POST "$BASE/v1/licenses" -H "x-api-key: $API" -H "Content-Type: application/json" \
   -d '{"license":{"templateId":1,"licensingMode":1,"userKey":"QGA6G-MTATL-2M798-4706W","licenseeName":"Reporting Demo","licenseeEmail":"reporting@demo.local","licenseeCompany":"Demo Co","maxAllowedSites":1}}'
+
+# Feature add-on example — two activation licenses: a base, plus a standalone
+# add-on carrying the AdvancedReporting feature and a 365-day support window
+curl -sk -X POST "$BASE/v1/licenses" -H "x-api-key: $API" -H "Content-Type: application/json" \
+  -d '{"license":{"templateId":1,"licensingMode":1,"licenseeName":"Add-on Demo","licenseeEmail":"addon@demo.local","licenseeCompany":"Demo Co","maxAllowedSites":1}}'
+curl -sk -X POST "$BASE/v1/licenses" -H "x-api-key: $API" -H "Content-Type: application/json" \
+  -d '{"license":{"templateId":1,"licensingMode":1,"licenseeName":"Add-on Demo","licenseeEmail":"addon@demo.local","licenseeCompany":"Demo Co","maxAllowedSites":1,"features":[{"name":"AdvancedReporting"}],"fields":[{"name":"SupportDays","value":"365"}]}}'
 ```
 
 `licensingMode`: `1` = activation, `2` = floating. The exception-report example has `UserKey = "QGA6G-MTATL-2M798-4706W"` hard-coded in [Program.cs](console-exception-report-example/Program.cs) — keep that key when creating its license, or change both to a key of your choice.

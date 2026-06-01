@@ -1,0 +1,25 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33717.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientFeatureAddon", "ClientFeatureAddon.csproj", "{2F9A1C7D-3B84-4E1A-9C2E-7F6D5A0B1E22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F9A1C7D-3B84-4E1A-9C2E-7F6D5A0B1E22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F9A1C7D-3B84-4E1A-9C2E-7F6D5A0B1E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F9A1C7D-3B84-4E1A-9C2E-7F6D5A0B1E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F9A1C7D-3B84-4E1A-9C2E-7F6D5A0B1E22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C1B7E42-5D6F-4A3B-9E10-2A4C6B8D0F31}
+	EndGlobalSection
+EndGlobal
