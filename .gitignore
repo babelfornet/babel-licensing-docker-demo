@@ -3,9 +3,14 @@ babel/
 
 # Ignore application files
 babel_service_*.zip
+babel_service_*.zip.*
 babel-licensing.zip
 Babel.Licensing*.nupkg
 Babel.Obfuscator*.nupkg
+
+# Ignore local license files and scratch/probe projects
+babel_test.licenses
+restriction-status-fix-check/
 
 # Ignore MAC OS files
 .DS_Store
